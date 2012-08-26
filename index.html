@@ -345,7 +345,7 @@
         $(document).ready(function() {
 
             // run MagicNav, set the nav container and nav to targets
-            var magicNav = $.MagicNav($('#main-nav'),$('article h2'),{titles:'text',offset:-20});
+            var magicNav = $.MagicNav($('#main-nav'),$('article h2'),{titles:'text',offset:-60});
             
             // keep height of main header con
             $('.main-header').css('height', $('.main-header').height()+40);
@@ -366,7 +366,6 @@
             $stickyHeader.css('top',-200);
             $mainNav.css({'top':-$mainNav.height()});
             var stickyNavHeight = $stickyHeader.height();
-            console.log(stickyNavHeight)
             var menuIsVisible = false;
 
             // set magicScroll props
@@ -375,9 +374,15 @@
             magicScroll.addMagic(navBottomY, showStickyBar, hideStickyBar);
             
             // set menu and nav events
-            $showMenuButton.on('click', function(e){e.preventDefault();});
-            $stickyNavBar.on('click', menuIsVisible ? hideMenu : showMenu );
-
+            $showMenuButton.on('click', function(e){
+                e.preventDefault();
+                if (menuIsVisible)  hideMenu();
+                else                showMenu();
+            });
+            $('.magicnav-link').on('click', function(e) {
+                if (menuIsVisible) hideMenu();
+            })
+            
             function showStickyBar() {
                 // move title and nav into fixed nav bar
                 $stickyNavBar
@@ -424,7 +429,6 @@
 
             function hideMenu() {
                 $stickyNavBar.off('mouseleave',hideMenu);
-                $stickyHeader.off('click',hideMenu);
                 $mainNav.animate({'top':-$mainNav.height(),'opacity':0},400);
                 $mainTitle
                     .animate({'padding-bottom':0}, 400, function() {

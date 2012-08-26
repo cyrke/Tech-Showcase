@@ -14,6 +14,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display
    WEB FONTS
    ========================================================================== */
 
+/*  DIN Font is NOT open source. Licensed for Draftfcb use only. 
+    To obtain a license, purchase from fontfont.com */
+
 /* first for IE 4–8 */
   @font-face {
     font-family: DINWeb-Light;

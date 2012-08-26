@@ -29,7 +29,7 @@
                     checkScroll();
                     doScrollCheck = false;
                 }
-                setTimeout(loop, 100); // loop calls itself and runs, then waits 100 miliseconds and runs again
+                setTimeout(loop, 200); // loop calls itself and runs, then waits 200 miliseconds and runs again
             }());
         }
         
