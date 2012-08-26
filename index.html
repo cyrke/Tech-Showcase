@@ -365,7 +365,8 @@
             // set initial states
             $stickyHeader.css('top',-200);
             $mainNav.css({'top':-$mainNav.height()});
-            var stickyNavHeight = $stickyNavBar.outerHeight();
+            var stickyNavHeight = $stickyHeader.height();
+            console.log(stickyNavHeight)
             var menuIsVisible = false;
 
             // set magicScroll props
@@ -411,10 +412,10 @@
                 $mainNav
                     .css('top',-$mainNav.height())
                     .css('opacity',1)
-                    .animate({'top':stickyNavHeight}, 400);
+                    .animate({'top':stickyNavHeight+20}, 400);
 
                 // animate sticky nav bar into view
-                $stickyNavBar.animate({'height':stickyNavHeight+$mainNav.height()+40},400, function() {
+                $mainTitle.animate({'padding-bottom':stickyNavHeight+$mainNav.height()},400, function() {
                     $stickyNavBar.on('mouseleave',hideMenu);
                 });
                 $showMenuButton.text('Hide Menu');
@@ -425,8 +426,8 @@
                 $stickyNavBar.off('mouseleave',hideMenu);
                 $stickyHeader.off('click',hideMenu);
                 $mainNav.animate({'top':-$mainNav.height(),'opacity':0},400);
-                $stickyNavBar
-                    .animate({'height':stickyNavHeight}, 400, function() {
+                $mainTitle
+                    .animate({'padding-bottom':0}, 400, function() {
                         $stickyHeader
                             .off('mouseover')
                             .on('mouseover',showMenu);

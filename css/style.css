@@ -98,11 +98,10 @@ a.tech-info:hover {background: #444;}
 .nav-bar .nav-links { position:absolute; width: 790px;
 text-align: center; }
 .sticky-header { position: fixed; width: 100%; cursor: pointer; }
-#sticky-nav-bar { height: 60px; }
 #sticky-nav-bar .title { 
   font-size:1em;
-  padding-bottom:10px;
-  border-bottom:solid 8px #eee;
+  background: #fff;
+  border-bottom:solid 1px #eee;
 }
 #show-links {
   padding: 5px;
