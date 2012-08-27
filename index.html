@@ -363,6 +363,8 @@
             var $mainNav = $('#main-nav');
             var $mainTitle = $('#main-title');
 
+            $('.main-header').css('height',$('.main-header').outerHeight());
+
             // add elements
             $('body').prepend($stickyHeader);
             $stickyHeader.append($stickyNavBar);
