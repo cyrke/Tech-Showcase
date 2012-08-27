@@ -347,9 +347,6 @@
             // run MagicNav, set the nav container and nav to targets
             var magicNav = $.MagicNav($('#main-nav'),$('article h2'),{titles:'text',offset:-60});
             
-            // keep height of main header con
-            $('.main-header').css('height', $('.main-header').height()+40);
-
             // set element vars
             var $stickyNavBar = $('<div class="nav-bar" id="sticky-nav-bar"></div>');
             var $showMenuButton = $('<a href="#" id="show-links">Show Menu</a>');
@@ -401,7 +398,8 @@
                 // reset nav css
                 $mainNav
                         .css('top',0)
-                        .css('opacity',1)
+                        .css('opacity',1);
+                $mainTitle.css('padding-bottom',0);
                 // animate out of window
                 $stickyHeader.css('display','none');
                 $('.main-header')
